@@ -1,10 +1,18 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from 'typeorm';
+/* eslint-disable camelcase */
+import {
+    Entity,
+    Column,
+    PrimaryGeneratedColumn,
+    CreateDateColumn,
+    UpdateDateColumn,
+    ManyToOne,
+    JoinColumn,
+} from 'typeorm';
 
 import User from '@modules/users/infra/typeorm/entities/User';
 
 @Entity('appointments')
 class Appointment {
-
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
@@ -23,9 +31,6 @@ class Appointment {
 
     @UpdateDateColumn()
     updated_at: Date;
-
 }
 
-
 export default Appointment;
-

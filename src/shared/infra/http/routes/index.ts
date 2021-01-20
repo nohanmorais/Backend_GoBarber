@@ -9,4 +9,3 @@ route.use('/users', usersRouter);
 route.use('/sessions', sessionsRouter);
 
 export default route;
-

@@ -7,8 +7,11 @@ import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 import UsersRepository from '@modules/users/infra/typeorm/repositories/UsersRepository';
 
 container.registerSingleton<IAppointmentsRepository>(
-    'AppointmentsRepository', AppointmentsRepository);
+    'AppointmentsRepository',
+    AppointmentsRepository,
+);
 
-    container.registerSingleton<IUsersRepository>(
-    'UsersRepository', UsersRepository);
-
+container.registerSingleton<IUsersRepository>(
+    'UsersRepository',
+    UsersRepository,
+);

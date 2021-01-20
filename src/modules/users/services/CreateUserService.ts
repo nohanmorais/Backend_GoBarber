@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-constructor */
 import { hash } from 'bcryptjs';
 import { inject, injectable } from 'tsyringe';
 
@@ -14,14 +15,12 @@ interface IRequest {
 
 @injectable()
 class CreateUserService {
-
     constructor(
         @inject('UsersRepository')
-        private usersRepository: IUsersRepository) {}
+        private usersRepository: IUsersRepository,
+    ) {}
 
-
-    public async execute( { name, email, password }: IRequest): Promise<User> {
-
+    public async execute({ name, email, password }: IRequest): Promise<User> {
         const checkUserExist = await this.usersRepository.findByEmail(email);
 
         if (checkUserExist) {
@@ -30,13 +29,11 @@ class CreateUserService {
 
         const hashedpassword = await hash(password, 8);
 
-
         const user = await this.usersRepository.create({
             name,
             email,
             password: hashedpassword,
         });
-
 
         return user;
     }
