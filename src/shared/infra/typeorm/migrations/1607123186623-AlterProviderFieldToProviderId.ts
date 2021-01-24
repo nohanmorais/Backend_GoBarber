@@ -1,5 +1,4 @@
 import {MigrationInterface, QueryRunner, TableColumn, TableForeignKey} from "typeorm";
-import Appointment from "../../models/Appointment";
 
 export default class AlterProviderFieldToProviderId1607123186623 implements MigrationInterface {
 
