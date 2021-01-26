@@ -1,14 +1,13 @@
 import { Router } from 'express';
 import ResetPasswordController from '../controllers/ResetPasswordController';
-import ForgotPassordController from '../controllers/ResetPasswordController';
-import SessionsController from '../controllers/SessionsController';
+import ForgotPasswordController from '../controllers/ForgotPasswordController';
 
 const passwordRouter = Router();
-const forgotPassworController = new ForgotPassordController();
-const resetPasswordService = new ResetPasswordController();
+const forgotPassworController = new ForgotPasswordController();
+const resetPasswordController = new ResetPasswordController();
 
 passwordRouter.post('/forgot', forgotPassworController.create);
-passwordRouter.post('/reset', resetPasswordService.create);
+passwordRouter.post('/reset', resetPasswordController.create);
 
 
 export default passwordRouter;

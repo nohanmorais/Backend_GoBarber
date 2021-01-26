@@ -4,7 +4,7 @@ import { container } from 'tsyringe';
 
 import SendForgotPasswordEmailService from '@modules/users/services/SendForgotPasswordEmailService';
 
-export default class ForgotPassordController {
+export default class ForgotPasswordController {
     public async create(
         request: Request,
         response: Response,
